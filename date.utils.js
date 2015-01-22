@@ -34,3 +34,16 @@ if (typeof Date.prototype.clearTime != 'differenceInDays') {
 		return dayDiff;
 	};
 }
+
+var DateUtils = {
+	// determine the number of days in a given month in a given year
+	// @param month month of year from 1 to 12
+	// @param year four digit year
+	daysInMonth: function(month, year) {
+		if (month instanceof Date) {
+			year = month.getFullYear();
+			month = month.getMonth() + 1;
+		}
+		return new Date(year, month, 0).getDate();
+	},
+}
