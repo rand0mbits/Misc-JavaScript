@@ -30,15 +30,17 @@ if (typeof Array.prototype.findIntegerGap != 'function') {
 			start = 1;
 		}
 		this.sort();
-		if (this[0] != start) {
+		if (this.length === 0 || start < this[0] || start > this[this.length - 1]) {
 			return start;
 		}
 		for (var i = 0; i < this.length; i++) {
+			var nextNum = this[i] + 1;
 			if (i + 1 == length) {
-				return this[i] + 1;
+				return nextNum;
 			}
-			if ((this[i] + 1) < this[i + 1]) {
-				return this[i] + 1;
+			
+			if (start < nextNum && nextNum < this[i + 1]) {
+				return nextNum;
 			}
 		}
 	};
