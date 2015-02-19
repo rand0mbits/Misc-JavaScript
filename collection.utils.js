@@ -1,3 +1,11 @@
+/**
+ * Turns an array of objects into an object whose values are the elements of the array
+ * and the keys are the values of the properties "property" of each element.
+ * E.g.: 
+ * 	var arr = [{name: 'Val', id: 1, color: 'green'}, {name: 'Jeff', id: 7, color: 'blue'}, {name: 'Mike', id: 3, color: 'red'}]
+ * 	arr.toMap('name'); // returns {'Val': {name: 'Val', id: 1, color: 'green'}, 
+ * 					   // 'Jeff': {name: 'Jeff', id: 7, color: 'blue'}, 'Mike': {name: 'Mike', id: 3, color: 'red'}
+ */
 if (typeof Array.prototype.toMap != 'function') {
 	Array.prototype.toMap = function (property){
 		var out = {};
