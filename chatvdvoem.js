@@ -8,6 +8,6 @@ restart.click(function() {
 		chat_stop();
 		setTimeout(function() {
 			$('#chat_start').click();
-		}, 200);
+		}, 500);
 });
 custom.append(restart)
